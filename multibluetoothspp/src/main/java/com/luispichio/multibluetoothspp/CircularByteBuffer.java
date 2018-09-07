@@ -56,6 +56,11 @@ public class CircularByteBuffer {
         _write(_byte);
     }
 
+    /**
+     * Escribe una trama de bytes en el buffer circular
+     * @param bytes bytes a escribir
+     * @throws IOException en caso de overflow
+     */
     public synchronized void writeBytes(byte[] bytes) throws IOException {
         for (int i = 0 ; i < bytes.length ; i++)
             _write(bytes[i]);
